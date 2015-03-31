@@ -118,10 +118,7 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="richTextBox1.Text" xml:space="preserve">
-    <value>MegaManXPasswordGenerator ReadMe.txt
-
-
-APPLICATION SUMMARY:
+    <value>APPLICATION SUMMARY:
 This is a Windows Forms application designed to Generate Passwords for the
 Super Nintendo Entertainment System (SNES) Game - Mega Man X.
 
@@ -132,15 +129,6 @@ HOW TO USE:
 Check the boxes of the desired Bosses Defeated/Items or Upgrades Acquired and click the
 "Generate Password" button.  The password should then appear in the textbox labeled
 "Password:"
-
-
----------------------------------------------------------------------------------------------------
-VERSION HISTORY:
-01.00.00.001 - Position (4,3) Fix
- -  For position (4,3), the Y factor should have been Factors.HeartTankSE
-    and not Factors.HeartTankSM.
-
-01.00.00.000 - Initial Release
 
 
 ---------------------------------------------------------------------------------------------------
@@ -173,26 +161,9 @@ http://www.gamefaqs.com/console/snes/file/588479/52749
 GameFAQs
 http://www.gamefaqs.com/
 
-Whiteball
-Who's Icon I stole and am using on this app (hope they don't mind)
-
 And this site
 http://www.newdream.net/~sage/old/numbers/pow2.htm
 for having 1058 "powers of 2" when I need them.
-
-
-
----------------------------------------------------------------------------------------------------
-RIGHTS:
-
-Date: 2008-06-28
-Copyright (c) 2008 Aaron Hoffman
-
-Feel free to:
- 1. Use
- 2. Share
- 3. Modify and Use
- 4. Modify and Share-Alike
 
 
 ---------------------------------------------------------------------------------------------------
@@ -201,11 +172,7 @@ CONTACT INFO:
 Aaron Hoffman
 
 Project Website:
-http://code.google.com/p/megamanxpasswordgenerator/
-
-
-[03:16]
-End MegaManXPasswordGenerator ReadMe.txt</value>
+https://github.com/aaronhoffman/megamanxpasswordgenerator</value>
   </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">

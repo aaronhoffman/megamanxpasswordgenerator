@@ -35,5 +35,10 @@ namespace MegaManXPasswordGenerator
         {
             About.SingleAboutForm = null;
         }
+
+        private void richTextBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
