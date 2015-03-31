@@ -1,14 +1,14 @@
-#APPLICATION SUMMARY:
+##Summary
 This is a Windows Forms application designed to Generate Passwords for the
 Super Nintendo Entertainment System (SNES) Game - Mega Man X.
 
-#HOW TO USE:
+##How To Use
 (if you have to read this....)
 Check the boxes of the desired Bosses Defeated/Items or Upgrades Acquired and click the
 "Generate Password" button.  The password should then appear in the textbox labeled
 "Password:"
 
-#BACKGROUND:
+##Background
 Because of the now prevalent "auto save" feature many games utilize, I forgot to write down my
 password before I shut off the SNES while playing Mega Man X. Now, normally I would just play
 the parts I "erased" again, but this was after a good 2 hour slugfest with one of the Mavericks
@@ -23,7 +23,7 @@ And, being a Computer Programmer, I am increasingly lazy, and only want to perfo
 then have it performed automatically after that.  So, a couple hours later, this application was
 born.  Now your desired password is a couple clicks away!  The world is safe again!
 
-#SPECIAL THANKS:
+##Special Thanks
 
 UltraBongo
 Author of "MEGA MAN X - PASSWORD ENCRYPTION SYSTEM".  Without whom, none of this would
