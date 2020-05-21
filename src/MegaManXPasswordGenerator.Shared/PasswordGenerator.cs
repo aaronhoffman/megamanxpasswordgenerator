@@ -21,7 +21,7 @@ namespace MegaManXPasswordGenerator.Shared
                 // for each row
                 for (int y = 0; y <= 2; y++)
                 {
-                    var passwordGridPosition = GetPasswordGridPositionForCoordinates(x, y);
+                    var passwordGridPosition = GetPasswordGridPositionForCoordinates(x + 1, y + 1);
 
                     var cellDigit = GetPasswordDigit(passwordCriteria, passwordGridPosition);
 
@@ -41,7 +41,7 @@ namespace MegaManXPasswordGenerator.Shared
                 password += Environment.NewLine;
             }
 
-            return password;
+            return password.Trim();
         }
 
         public PasswordGridPosition GetPasswordGridPositionForCoordinates(int x, int y)

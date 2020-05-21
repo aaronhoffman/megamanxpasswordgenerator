@@ -1,5 +1,228 @@
 ﻿@page "/"
 
-<h3>Mega Max X Password Generator</h3>
+<style type="text/css">
+    .column-label {
+        height: 24px;
+    }
+</style>
 
-Welcome to your new app.
+<div class="row">
+    <div class="col-12 text-center">
+        <h4 class="m-4">Mega Max X Password Generator</h4>
+    </div>
+</div>
+<div class="row">
+    <div class="col-3">
+        &nbsp;
+    </div>
+    <div class="col-3 text-center">
+        <img class="img-fluid" style="max-height:200px;" src="/images/mega-man-x-snes-front-cover.jpg" />
+    </div>
+    <div class="col-3 text-center">
+        <p>
+            <button type="button" class="btn btn-primary" @onclick="GeneratePasswordButtonOnClick">Generate Password</button>
+        </p>
+        <textarea style="font-size:18pt; width:160px; height:150px; padding-top:20px; padding-left:38px;" @bind="_generatedPassword"></textarea>
+    </div>
+    <div class="col-3">
+        &nbsp;
+    </div>
+</div>
+<div class="row">
+    <div class="col-12 text-center">
+        <div class="m-4">
+            Selected options below then press generate password!
+        </div>
+    </div>
+</div>
+<div class="row" style="font-size: 10pt;">
+    <div class="col-12">
+        <div class="row">
+            <div class="col-2">
+                &nbsp;
+            </div>
+
+            @*column for bosses*@
+            <div class="col-2">
+                <p class="column-label">Mavericks (Bosses) Defeated:</p>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" id="cbBossAA" @bind="_passwordCriteria.BossAADefeated">
+                    <label class="form-check-label" for="cbBossAA">
+                        Armored Armadillo
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" id="cbBossLO" @bind="_passwordCriteria.BossLODefeated">
+                    <label class="form-check-label" for="cbBossLO">
+                        Launch Octopus
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" id="cbBossBK" @bind="_passwordCriteria.BossBKDefeated">
+                    <label class="form-check-label" for="cbBossBK">
+                        Boomer Kuwanger
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" id="cbBossSM" @bind="_passwordCriteria.BossSMDefeated">
+                    <label class="form-check-label" for="cbBossSM">
+                        Spark Mandrill
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" id="cbBossSC" @bind="_passwordCriteria.BossSCDefeated">
+                    <label class="form-check-label" for="cbBossSC">
+                        Sting Chameleon
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" id="cbBossFM" @bind="_passwordCriteria.BossFMDefeated">
+                    <label class="form-check-label" for="cbBossFM">
+                        Flame Mammoth
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" id="cbBossSE" @bind="_passwordCriteria.BossSEDefeated">
+                    <label class="form-check-label" for="cbBossSE">
+                        Storm Eagle
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" id="cbBossCP" @bind="_passwordCriteria.BossCPDefeated">
+                    <label class="form-check-label" for="cbBossCP">
+                        Chill Penguin
+                    </label>
+                </div>
+            </div>
+
+            @*column for sub-tanks*@
+            <div class="col-2">
+                <p class="column-label">Sub-Tanks Acquired:</p>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" id="cbSubAA" @bind="_passwordCriteria.SubTankAAAcquired">
+                    <label class="form-check-label" for="cbSubAA">
+                        Armored Armadillo Stage
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" id="cbSubSM" @bind="_passwordCriteria.SubTankSMAcquired">
+                    <label class="form-check-label" for="cbSubSM">
+                        Spark Mandrill Stage
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" id="cbSubFM" @bind="_passwordCriteria.SubTankFMAcquired">
+                    <label class="form-check-label" for="cbSubFM">
+                        Flame Mammoth Stage
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" id="cbSubSE" @bind="_passwordCriteria.SubTankSEAcquired">
+                    <label class="form-check-label" for="cbSubSE">
+                        Storm Eagle Stage
+                    </label>
+                </div>
+            </div>
+
+            @*column for upgrades*@
+            <div class="col-2">
+                <p class="column-label">Upgrades Acquired:</p>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" id="cbUpgradeHelmet" @bind="_passwordCriteria.UpgradeHelmetAcquired">
+                    <label class="form-check-label" for="cbUpgradeHelmet">
+                        Helmet
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" id="cbUpgradeArmor" @bind="_passwordCriteria.UpgradeArmorAcquired">
+                    <label class="form-check-label" for="cbUpgradeArmor">
+                        Armor
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" id="cbUpgradeBoots" @bind="_passwordCriteria.UpgradeBootsAcquired">
+                    <label class="form-check-label" for="cbUpgradeBoots">
+                        Boots
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" id="cbUpgradeXBuster" @bind="_passwordCriteria.UpgradeXBusterAcquired">
+                    <label class="form-check-label" for="cbUpgradeXBuster">
+                        X Buster
+                    </label>
+                </div>
+            </div>
+
+            @*column for heart tank*@
+            <div class="col-2">
+                <p class="column-label">Heart Tanks Acquired:</p>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" id="cbHeartAA" @bind="_passwordCriteria.HeartTankAAAcquired">
+                    <label class="form-check-label" for="cbHeartAA">
+                        Armored Armadillo Stage
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" id="cbHeartLO" @bind="_passwordCriteria.HeartTankLOAcquired">
+                    <label class="form-check-label" for="cbHeartLO">
+                        Launch Octopus Stage
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" id="cbHeartBK" @bind="_passwordCriteria.HeartTankBKAcquired">
+                    <label class="form-check-label" for="cbHeartBK">
+                        Boomer Kuwanger Stage
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" id="cbHeartSM" @bind="_passwordCriteria.HeartTankSMAcquired">
+                    <label class="form-check-label" for="cbHeartSM">
+                        Spark Mandrill Stage
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" id="cbHeartSC" @bind="_passwordCriteria.HeartTankSCAcquired">
+                    <label class="form-check-label" for="cbHeartSC">
+                        Sting Chameleon Stage
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" id="cbHeartFM" @bind="_passwordCriteria.HeartTankFMAcquired">
+                    <label class="form-check-label" for="cbHeartFM">
+                        Flame Mammoth Stage
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" id="cbHeartSE" @bind="_passwordCriteria.HeartTankSEAcquired">
+                    <label class="form-check-label" for="cbHeartSE">
+                        Storm Eagle Stage
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" id="cbHeartCP" @bind="_passwordCriteria.HeartTankCPAcquired">
+                    <label class="form-check-label" for="cbHeartCP">
+                        Chill Penguin Stage
+                    </label>
+                </div>
+            </div>
+
+            <div class="col-2">
+                &nbsp;
+            </div>
+        </div>
+    </div>
+</div>
+
+@code {
+
+    PasswordGenerator _passwordGenerator = new PasswordGenerator();
+
+    PasswordCriteria _passwordCriteria = new PasswordCriteria();
+
+    string _generatedPassword = "";
+
+    void GeneratePasswordButtonOnClick()
+    {
+        _generatedPassword = _passwordGenerator.GeneratePassword(_passwordCriteria);
+    }
+}
