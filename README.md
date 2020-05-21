@@ -1,5 +1,5 @@
 ## Summary
-This is a Blazor web application that can generate passwords for Mega Man X on SNES.
+This is a Blazor web application that can generate passwords for Mega Man X on SNES. https://aaronhoffman.github.io/megamanxpasswordgenerator/
 
 ## How To Use
 Check the boxes of the desired Bosses Defeated/Items or Upgrades acquired and click the "Generate Password" button. The password will then appear in textarea below the button.
