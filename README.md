@@ -1,15 +1,10 @@
 ## Summary
-This is a Windows Forms application designed to Generate Passwords for the
-Super Nintendo Entertainment System (SNES) Game - Mega Man X.
+This is a Blazor web application that can generate passwords for Mega Man X on SNES.
 
 ## How To Use
-Check the boxes of the desired Bosses Defeated/Items or Upgrades Acquired and click the
-"Generate Password" button.  The password should then appear in the textbox labeled
-"Password:"
+Check the boxes of the desired Bosses Defeated/Items or Upgrades acquired and click the "Generate Password" button. The password will then appear in textarea below the button.
 
 ## Special Thanks
-UltraBongo
-Author of "MEGA MAN X - PASSWORD ENCRYPTION SYSTEM".  Without whom, none of this would have been possible. (file: mega_man_x_password.txt) http://www.gamefaqs.com/console/snes/file/588479/52749
+UltraBongo, Author of "MEGA MAN X - PASSWORD ENCRYPTION SYSTEM", without whom, none of this would have been possible. (file: mega_man_x_password.txt) https://gamefaqs.gamespot.com/snes/588479-mega-man-x/faqs/52749
 
-GameFAQs
-http://www.gamefaqs.com/
+GameFAQs, http://www.gamefaqs.com/
