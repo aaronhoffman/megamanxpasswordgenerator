@@ -35,6 +35,7 @@ TestResults/
 App_Data/
 Ankh.NoLoad
 *.Publish.xml
+.vs
 
 
 #Project files
